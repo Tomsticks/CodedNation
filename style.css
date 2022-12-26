@@ -1,0 +1,288 @@
+html{
+    height: 100;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#171738,#2E1760);
+    /* background-color: black; */
+}
+
+nav{
+      /* border: 1px solid green; */
+padding-bottom: 90vh;
+position: absolute;
+display: flex;
+flex-direction: column;
+gap:35px;
+padding-right: 100px;
+background-color: #1d0c52;
+/* left: -100px; */
+/* z-index: 1;
+transition: ease-in-out 0.5s; */
+z-index: 2;
+
+position: absolute;
+left: -100px;
+width: 100px;
+height: 100px;
+background:#1d0c52 ;
+-webkit-animation: slide 3s forwards;
+-webkit-animation-delay: 3s;
+animation: slide 2s forwards;
+
+display: none;
+
+}
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
+.hambuger{
+    position: fixed;
+    /* border: 1px solid red; */
+
+}
+.hambuger > i{
+    color: rgba(24, 224, 34, 0.418);
+}
+.hambuger > i:hover{
+    cursor: pointer;
+
+}
+.overlay{
+    background-color: rgba(0, 0, 0, 0.164);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+    
+}
+.toast_box{
+    position: absolute;
+    right: 0;
+    margin-right: 70px;
+    border: 1px solid green;
+    padding: 0 90px;
+    margin-top: 20px;
+    border-radius: 10px;
+  background: linear-gradient(to left, white ,green);
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  display: none;
+  color: white;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {right: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  
+  
+nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: cursive;
+    border: 1px solid rgba(255, 255, 255, 0.664);
+   margin-left: 20px;
+   padding: 10px;
+   padding-right: 40px;
+   border-radius: 20px;
+   margin-top: 10px;
+}
+nav a:hover{
+    background-color: antiquewhite;
+    color: black;
+}
+.login-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(#006992, #2E1760);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 6);
+    padding: 40px;
+    border-radius: 10px;
+    
+}
+
+.login-box > h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: white;
+    text-align: center;
+
+}
+
+.login-box .user-box{
+    position: relative;
+}
+.login-box .user-box{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 30px;
+    border: none;
+    padding-bottom: 30px;
+    border-bottom: 1px solid white;
+    outline: none;
+    background: transparent;
+}
+.login-box .user-box >label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    padding: 10px 0;
+    font-size: 16px;
+    pointer-events: none;
+    transition: .6s;
+}
+
+.form .login-box .user-box input:focus ~ label,
+.form .login-box .user-box input:valid ~ label{
+top: -20px;
+left: 0;
+color: #03e9f4;
+font-size: 12px;
+position:absolute;
+}
+
+.login-box > a{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+}
+
+.login-box a:hover{
+    background: #03e9f4;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+}
+
+.login-box a >span{
+    position: absolute;
+    display: block;
+}
+input{
+    padding: 5px;
+    color: black;
+    outline: none;
+}
+
+.login-box a span:nth-child(1) {
+    top:0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #30e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+
+/* @keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+.login-box a span:nth-child(2){
+    top:-100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #30e9f4);
+    animation: btn-anim2 2s linear infinite;
+    animation-delay: .25s;
+}
+
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%, 100% {
+        top: 100%;
+    }
+}
+
+
+
+.login-box a span:nth-child(3){
+    bottom:0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #30e9f4);
+    animation: btn-anim3 2s linear infinite;
+    animation-delay: .5s;
+}
+
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%, 100% {
+        right: 100%;
+    }
+}
+
+.login-box a span:nth-child(4) {
+    bottom:-100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #30e9f4);
+    animation: btn-anim4 2s linear infinite;
+    animation-delay: .75s;
+}
+
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%, 100% {
+        bottom: 100%;
+    }
+}
+
+.same{
+    outline: none;
+}
+.xame{
+    outline: none;
+}
+.password-text{
+    font-size: 10px;
+} */
